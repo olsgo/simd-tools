@@ -19,7 +19,9 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "602.0.0"),
+        // Align with the swiftlang mirror used elsewhere (e.g. SnapshotTesting)
+        // so SwiftPM sees a single swift-syntax identity during resolution.
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "602.0.0"),
     ],
     targets: [
         .macro(
